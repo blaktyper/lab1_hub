@@ -1,37 +1,37 @@
 import java.util.Random;
 public class  Lab11 {
-     static final int long_array1 = 8;
-     static final int long_array2 = 19;
-     static final int columes_array3 = 19;
-     static final int rows_array3 = 8;
+    static final int LONG_ARRAY1 = 8;
+    static final int LONG_ARRAY2 = 19;
+    static final int COLUMES_ARRAY3 = 19;
+    static final int ROWS_ARRAY3 = 8;
 
     static int[] first_task() {
-        int[] w = new int[long_array1];
-        int value = 19;
-        for (int i = 0; i < w.length; i++) {
-            w[i] = value;
-            value = value - 2;
+        int[] arrayW = new int[LONG_ARRAY1];
+        int currentValue = 19;
+        for (int i = 0; i < arrayW.length; i++) {
+            arrayW[i] = currentValue;
+            currentValue = currentValue - 2;
         }
-        return w;
+        return arrayW;
     }
 
-     static float[] second_task() {
-        float[] x = new float[long_array2];
-        Random rand = new Random();
-        for (int i = 0; i < long_array2; i++) {
-            x[i] = -5 + rand.nextFloat() * 16;
+    static float[] second_task() {
+        float[] arrayX = new float[LONG_ARRAY2];
+        Random random = new Random();
+        for (int i = 0; i < LONG_ARRAY2; i++) {
+            arrayX[i] = -5 + random.nextFloat() * 16;
         }
-        return x;
+        return arrayX;
     }
 
-     static double[][] third_task(int[] w, float[] x) {
-        double[][] n = new double[rows_array3][columes_array3];
-        for (int i = 0; i < rows_array3; i++) {
-            for (int j = 0; j < columes_array3; j++) {
-                n[i][j] = calculate1(w[i], x[j]);
+    static double[][] third_task(int[] arrayW, float[] arrayX) {
+        double[][] arrayN = new double[ROWS_ARRAY3][COLUMES_ARRAY3];
+        for (int i = 0; i < ROWS_ARRAY3; i++) {
+            for (int j = 0; j < COLUMES_ARRAY3; j++) {
+                arrayN[i][j] = calculate1(arrayW[i], arrayX[j]);
             }
         }
-        return n;
+        return arrayN;
     }
 
     static double calculate1(int wValue, float xValue) {
@@ -50,43 +50,41 @@ public class  Lab11 {
         return Math.pow(number1, degree);
     }
 
-
-
-    static void printarray1(int[] w) {
-        for (int i = 0; i < w.length; i++) {
-            System.out.print(w[i] + " ");
+    static void printarray1(int[] arrayW) {
+        for (int i = 0; i < arrayW.length; i++) {
+            System.out.print(arrayW[i] + " ");
         }
         System.out.println();
     }
 
-    static void printarray2(float[] x) {
-        for (int i = 0; i < x.length; i++) {
-            System.out.printf("%.5f ", x[i]);
+    static void printarray2(float[] arrayX) {
+        for (int i = 0; i < arrayX.length; i++) {
+            System.out.printf("%.5f ", arrayX[i]);
         }
         System.out.println();
     }
 
-    static void printarray3(double[][] n) {
-        for (int i = 0; i < n.length; i++) {
-            for (int j = 0; j < n[i].length; j++) {
-                System.out.printf("%20.5f ", n[i][j]);
+    static void printarray3(double[][] arrayN) {
+        for (int i = 0; i < arrayN.length; i++) {
+            for (int j = 0; j < arrayN[i].length; j++) {
+                System.out.printf("%19.5f ", arrayN[i][j]);
             }
             System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        int[] w = first_task();
-        float[] x = second_task();
-        double[][] n = third_task(w, x);
+        int[] arrayW = first_task();
+        float[] arrayX = second_task();
+        double[][] arrayN = third_task(arrayW, arrayX);
         System.out.println("Массив w:");
-        printarray1(w);
+        printarray1(arrayW);
 
         System.out.println("Массив x:");
-        printarray2(x);
+        printarray2(arrayX);
 
         System.out.println("Массив n:");
-        printarray3(n);
+        printarray3(arrayN);
     }
 }
 

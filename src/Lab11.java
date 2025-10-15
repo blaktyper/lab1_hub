@@ -50,6 +50,7 @@ public class  Lab11 {
         return Math.pow(number1, degree);
     }
 
+
     static void printarray1(int[] arrayW) {
         for (int i = 0; i < arrayW.length; i++) {
             System.out.print(arrayW[i] + " ");
